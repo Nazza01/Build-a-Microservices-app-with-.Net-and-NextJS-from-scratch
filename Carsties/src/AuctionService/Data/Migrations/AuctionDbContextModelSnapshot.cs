@@ -78,7 +78,7 @@ namespace AuctionService.Data.Migrations
                     b.Property<string>("Make")
                         .HasColumnType("text");
 
-                    b.Property<int>("Mileage")
+                    b.Property<int>("Milage")
                         .HasColumnType("integer");
 
                     b.Property<string>("Model")
