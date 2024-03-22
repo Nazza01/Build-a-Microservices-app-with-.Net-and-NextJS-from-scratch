@@ -16,5 +16,9 @@ public class AuctionCreatedFaultConsumer : IConsumer<Fault<AuctionCreated>>
             context.Message.Message.Model = "FooBar";
             await context.Publish(context.Message.Message);
         }
+        else
+        {
+            Console.WriteLine("Not an argument exception - update error dashboard somewhere");
+        }
     }
 }
