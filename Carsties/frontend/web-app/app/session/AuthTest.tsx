@@ -2,7 +2,7 @@
 
 import { Button } from "flowbite-react"
 import { useState } from "react"
-import { UpdateAuctionTest } from "../actions/auctionActions"
+import { updateAuctionTest } from "../actions/auctionActions"
 
 type Props = {}
 
@@ -13,7 +13,7 @@ export default function AuthTest() {
 	function doUpdate() {
 		setResult(undefined)
 		setLoading(true)
-		UpdateAuctionTest()
+		updateAuctionTest()
 			.then((res) => setResult(res))
 			.finally(() => setLoading(false))
 	}
