@@ -18,9 +18,9 @@ COPY src/NotificationService/NotificationService.csproj src/NotificationService/
 RUN dotnet restore Carsties.sln
 
 # Copy the app folders
-COPY src/IdentityService src/IdentityService
+COPY src/NotificationService src/NotificationService
 COPY src/Contracts src/Contracts
-WORKDIR /app/src/IdentityService
+WORKDIR /app/src/NotificationService
 
 RUN dotnet publish -c Release -o /app/src/out
 
@@ -28,4 +28,4 @@ RUN dotnet publish -c Release -o /app/src/out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT [ "dotnet", "IdentityService.dll" ]
+ENTRYPOINT [ "dotnet", "NotificationService.dll" ]
